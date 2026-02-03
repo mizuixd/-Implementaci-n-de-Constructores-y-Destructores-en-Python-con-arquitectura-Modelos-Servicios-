@@ -1,0 +1,10 @@
+mi_proyecto/
+│
+├── modelos/
+│   └── cuenta_bancaria.py
+│
+├── servicios/
+│   └── gestor_cuentas.py
+│
+├── main.py
+└── README.md
