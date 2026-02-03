@@ -1,0 +1,17 @@
+from modelos.cuenta_bancaria import CuentaBancaria
+
+class GestorCuentas:
+    def __init__(self):
+        """Constructor: inicializa la lista de cuentas gestionadas."""
+        self.cuentas = []
+
+    def crear_cuenta(self, titular, saldo_inicial=0):
+        """Crea una nueva cuenta bancaria y la guarda en la lista."""
+        cuenta = CuentaBancaria(titular, saldo_inicial)
+        self.cuentas.append(cuenta)
+        return cuenta
+
+    def mostrar_cuentas(self):
+        """Muestra todas las cuentas registradas."""
+        for cuenta in self.cuentas:
+            print(f"Titular: {cuenta.titular}, Saldo: {cuenta.saldo}")
