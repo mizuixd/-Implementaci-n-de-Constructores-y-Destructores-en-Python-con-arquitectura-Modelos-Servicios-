@@ -1,0 +1,30 @@
+class CuentaBancaria:
+    def __init__(self, titular, saldo_inicial=0):
+        """
+        Constructor: inicializa los atributos de la cuenta.
+        - titular: nombre del dueño de la cuenta (dato obligatorio).
+        - saldo_inicial: valor opcional, por defecto 0.
+        """
+        self.titular = titular
+        self.saldo = saldo_inicial
+        print(f"Cuenta creada para {self.titular} con saldo inicial de {self.saldo}.")
+
+    def depositar(self, monto):
+        """Agrega dinero a la cuenta."""
+        self.saldo += monto
+        print(f"Se depositaron {monto}. Nuevo saldo: {self.saldo}.")
+
+    def retirar(self, monto):
+        """Retira dinero si hay suficiente saldo."""
+        if monto <= self.saldo:
+            self.saldo -= monto
+            print(f"Se retiraron {monto}. Nuevo saldo: {self.saldo}.")
+        else:
+            print("Fondos insuficientes.")
+
+    def __del__(self):
+        """
+        Destructor: se ejecuta cuando el objeto deja de existir.
+        Aquí simulamos la 'liberación de recursos' registrando el cierre de la cuenta.
+        """
+        print(f"La cuenta de {self.titular} ha sido cerrada. Recursos liberados.")
